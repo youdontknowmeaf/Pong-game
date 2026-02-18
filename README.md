@@ -1,3 +1,11 @@
 # README PLS :-)
 
-Yeah so I suck at using github, Please download the __**Pong.tar.xz**__ as it is the newest release. The other .cpp files are legacy and don't contain the newest stuff.
+How to install:
+
+1. ``git clone https://github.com/youdontknowmeaf/Pong-game-CPP.git``
+2. ``cd Pong``
+3. ``python3 setup.py``
+4. To launch the game you must do ``./out`` and to recompile it you can:
+- ``g++ main.cpp -o out -lraylib``
+OR
+- ``./build.sh``
