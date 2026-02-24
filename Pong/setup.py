@@ -25,7 +25,7 @@ if a == "n":
 
         Other distros:
         https://github.com/raysan5/raylib/wiki/Working-on-GNU-Linux""")
-    b = input('Want to install? (no,fedora,suse,arch): ')
+    b = input('Want to install? (no,fedora,suse,arch): ').lower()
     if b == 'fedora':
         fedoraInstall()
     elif b == 'arch':
