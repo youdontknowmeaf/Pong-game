@@ -7,26 +7,28 @@
 // [ Configuration. ]
 
 
-        int screen_width = 800; // Zmiana szerokosci okna
-								// Window width
-        int screen_height = 500; // Zmiana wysokosci okna
-								 // Window height
-	int score_left = 0; // Poczatkowy wynik gracza lewego
-						// Beginning score of left player
-	int score_right = 0; // ------------==--------- prawego
-						 // Same as before but for right player
-	int MaxFps = 45; // Maksymalna liczba FPS
-					 // Max FPS limit
-	int ball_speed = 7; // Predkosc pileczki (ostrożnie)
-						// Ball speed (careful)
-        int ball_radius = screen_height/25;     // Promień koła (piłki)
-                        // Radius of the circle (ball)
-	int paddle_speed = 5; // Predkosc paletek do ping ponga
-						// Speed of ping pong paddles
-	std::string mainColor = "RED";     // Zmiana koloru glownego (zalecany: "default main")
-									   // Changing main color (recommended: "default main")
-	std::string secColor = "BLUE"; // Zmiana koloru pobocznego (zalecany: "default secondary")
-									// Changing secondary color (recommended: "default secondary")
+        int screen_width = 800;              // Zmiana szerokosci okna
+								             // Window width
+        int screen_height = 500;             // Zmiana wysokosci okna
+								             // Window height
+	    int score_left = 0; 				 // Poczatkowy wynik gracza lewego
+										     // Beginning score of left player
+	    int score_right = 0; 				 // To samo co wcześniej, dla prawego
+						 				     // Same as before but for right player
+      //bool zen_mode = false;               // Tryb ZEN (brak resetu piłki)
+											 // ZEN mode (no ball resetting)
+	    int MaxFps = 45; 					 // Maksymalna liczba FPS
+					 						 // Max FPS limit
+	    int ball_speed = 7; 				 // Predkosc pileczki (ostrożnie)
+											 // Ball speed (careful)
+        int ball_radius = screen_height/25;  // Promień koła (piłki)
+                        					 // Radius of the circle (ball)
+	    int paddle_speed = 5; 				 // Predkosc paletek do ping ponga
+											 // Speed of ping pong paddles
+    	std::string mainColor = "RED";       // Zmiana koloru glownego (zalecany: "default main")
+									         // Changing main color (recommended: "default main")
+    	std::string secColor = "BLUE";       // Zmiana koloru pobocznego (zalecany: "default secondary")
+									         // Changing secondary color (recommended: "default secondary")
 						  // |------ Table of colors -----------|
 						  // |name:                             |
 						  // |------ Tabela Kolorow ------------|
@@ -96,13 +98,16 @@ class Ball{
         }
 
 	// Why did I make this shit under this comment...?
-
-        /*
+	// Update idea: Zen mode.
+	// <rant> It's not a bug, it's a feature. </rant>
+																/*
+	if(zen_mode) {
 	if(x + radius >= GetScreenWidth() || x - radius <= 0)
         {
             speed_x *= -1;
         }
-	*/
+	}
+																*/
     }
 };
 
@@ -221,8 +226,8 @@ int main()
         paddlel.draw();
         paddler.draw();
 
-	DrawText(TextFormat("Score: %d", score_left), GetScreenWidth()/4-GetScreenHeight()/20, GetScreenHeight()/10, GetScreenHeight()/20, getCol(secColor)); //lewa paletka
-	DrawText(TextFormat("Score: %d", score_right), GetScreenWidth()/4*3-GetScreenHeight()/20, GetScreenHeight()/10, GetScreenHeight()/20, getCol(secColor)); //prawa paletka
+	DrawText(TextFormat("Score: %d", score_left), GetScreenWidth()/4-GetScreenHeight()/20, GetScreenHeight()/10, GetScreenHeight()/20, getCol(secColor));
+	DrawText(TextFormat("Score: %d", score_right), GetScreenWidth()/4*3-GetScreenHeight()/20, GetScreenHeight()/10, GetScreenHeight()/20, getCol(secColor));
         EndDrawing();
     }
 
