@@ -4,7 +4,8 @@
 2. ``cd Pong-game-CPP/Pong``
 3. ``python3 setup.py``
 4. To launch the game you must do ``./out`` and to recompile it you can:
-- ``g++ main.cpp -o out -lraylib``
+- ``g++ main.cpp -o Pong -lraylib`` (for main version)
+- ``gcc lightweigh-pong.c -o Lightweigh-Pong -lraylib -lm`` (for lightweigh version)
 OR
 - ``./build.sh``
 
@@ -20,10 +21,14 @@ OR
 - Created user friendly configuration
 - Created python setup
 - Created shell auto-compile
-- Reset the pre-defined colors to RED + BLUE.
+- Reset the pre-defined colors to RED + BLUE
 - **v1.1**:
 - Added additional features to configuration
 - Improved the python script
 - Improved shell auto-compile
 - Improved the readibility of the configuration
 - Rewrote the README.md 
+- **v1.1.1**
+- Added compile instructions for lightweigh pong
+- Added lightweigh pong
+- Minor cosmetic changes
