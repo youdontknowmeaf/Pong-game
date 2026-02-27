@@ -2,33 +2,34 @@
 #include <raylib.h>
 #include <string>
 
+float delta = 1;
 
 //----------------------------------[ Konfiguracja ]--------------------------------------------------------------------------//
 // [ Configuration. ]
 
 
-        int screen_width = 800;              // Zmiana szerokosci okna
-								             // Window width
-        int screen_height = 500;             // Zmiana wysokosci okna
-								             // Window height
-	    int score_left = 0; 				 // Poczatkowy wynik gracza lewego
-										     // Beginning score of left player
-	    int score_right = 0; 				 // To samo co wcześniej, dla prawego
-						 				     // Same as before but for right player
-      //bool zen_mode = false;               // Tryb ZEN (brak resetu piłki)
-											 // ZEN mode (no ball resetting)
-	    int MaxFps = 45; 					 // Maksymalna liczba FPS
-					 						 // Max FPS limit
-	    int ball_speed = 7; 				 // Predkosc pileczki (ostrożnie)
-											 // Ball speed (careful)
-        int ball_radius = screen_height/25;  // Promień koła (piłki)
-                        					 // Radius of the circle (ball)
-	    int paddle_speed = 5; 				 // Predkosc paletek do ping ponga
-											 // Speed of ping pong paddles
-    	std::string mainColor = "RED";       // Zmiana koloru glownego (zalecany: "default main")
-									         // Changing main color (recommended: "default main")
-    	std::string secColor = "BLUE";       // Zmiana koloru pobocznego (zalecany: "default secondary")
-									         // Changing secondary color (recommended: "default secondary")
+        int screen_width = 800;			// Zmiana szerokosci okna
+						// Window width
+        int screen_height = 500;		// Zmiana wysokosci okna
+						// Window height
+	int score_left = 0;	 		// Poczatkowy wynik gracza lewego
+						// Beginning score of left player
+	int score_right = 0;			// To samo co wcześniej, dla prawego
+						// Same as before but for right player
+      //bool zen_mode = false;			// Tryb ZEN (brak resetu piłki)
+						// ZEN mode (no ball resetting)
+	int MaxFps = 45;			// Maksymalna liczba FPS
+					 	// Max FPS limit
+	int ball_speed = 600;	 		// Predkosc pileczki (ostrożnie)
+						// Ball speed (careful)
+        int ball_radius = screen_height/25;	// Promień koła (piłki)
+                        			// Radius of the circle (ball)
+	int paddle_speed = 500;			// Predkosc paletek do ping ponga
+						// Speed of ping pong paddles
+    	std::string mainColor = "RED";		// Zmiana koloru glownego (zalecany: "default main")
+						// Changing main color (recommended: "default main")
+    	std::string secColor = "BLUE";       	// Zmiana koloru pobocznego (zalecany: "default secondary")
+						// Changing secondary color (recommended: "default secondary")
 						  // |------ Table of colors -----------|
 						  // |name:                             |
 						  // |------ Tabela Kolorow ------------|
@@ -78,7 +79,7 @@
 	return RED;
 }
 
-class Ball{
+class Ball {
     public:
     float x, y;
     int speed_x, speed_y;
@@ -89,8 +90,8 @@ class Ball{
     }
 
     void update() {
-        x += speed_x;
-        y += speed_y;
+        x += speed_x * delta;
+        y += speed_y * delta;
 
         if(y + radius >= GetScreenHeight() || y - radius <= 0)
         {
@@ -136,11 +137,11 @@ class PaddleArrow {
                     {
                     if(IsKeyDown(KEY_UP))
                         {
-                            y = y - speed;
+                            y = y - speed * delta; 
                         }
                     else if(IsKeyDown(KEY_DOWN))
                         {
-                            y = y + speed;
+                            y = y + speed * delta;
                         }
                     }
 
@@ -153,11 +154,11 @@ class PaddleWSAD: public PaddleArrow
                     {
                     if(IsKeyDown(KEY_W))
                         {
-                            y = y - speed;
+                            y = y - speed * delta;
                         }
                     else if(IsKeyDown(KEY_S))
                         {
-                            y = y + speed;
+                            y = y + speed * delta;
                         }
                     }
                 };
@@ -175,24 +176,26 @@ int main()
     
     ball.x = screen_width/2;
     ball.y = screen_height/2;
-    ball.speed_x = ball_speed;
-    ball.speed_y = ball_speed;
+    ball.speed_x = ball_speed * delta;
+    ball.speed_y = ball_speed * delta;
 
     paddlel.height = 150;
     paddlel.width = 30;
     paddlel.x = 0;
     paddlel.y = screen_height/2 - paddlel.height/2;
-    paddlel.speed = paddle_speed;
+    paddlel.speed = paddle_speed * delta;
 
     paddler.height = 150;
     paddler.width = 30;
     paddler.x = screen_width - paddler.width;
     paddler.y = screen_height/2 - paddler.height/2;
-    paddler.speed = paddle_speed;
+    paddler.speed = paddle_speed * delta;
 
     while(WindowShouldClose() == false)
     {
         BeginDrawing();
+
+	delta = GetFrameTime();
         
         if(CheckCollisionCircleRec(Vector2{ball.x, ball.y}, ball.radius, Rectangle{paddlel.x, paddlel.y, paddlel.width, paddlel.height}))
         {
