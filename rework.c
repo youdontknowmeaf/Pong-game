@@ -4,6 +4,7 @@
         This is part of the rework. I will reuse the code from lightweigh version.
         Unstable, untested, likely doesn't work. I will have to rewrite make file,
         fuck this shit.
+		FUCK RUST I REWRITE MY CODE IN FUCKIDY C LIKE A REAL PROGRAMMER.
 </rant>
 */
 
