@@ -27,6 +27,7 @@
         int window_width = 0;
         int window_height = 0;
         int window_max_fps = 30;
+		Color text_color = WHITE; 
 
 // ---------------------------------[ Paddles cnf ]---------------------------------
 
@@ -59,6 +60,8 @@ int main(void) {
 	struct Ball b={ 400,250,200,-200,ball_radius,ball_color };
 	struct Paddle p1={ 10,170,paddle_width,paddle_height,paddle_color };
 	struct Paddle pa={ 765,170,paddle_width,paddle_height,color };
+	p1s = 0;
+	p2s = 0;
 
 	while(!WindowShouldClose()) {
 	BeginDrawing();
@@ -88,10 +91,17 @@ int main(void) {
 	DrawRectangle(pa.x,pa.y,pa.width,pa.height,pa.clr);
 	DrawCircle(b.x, b.y, b.radius, b.clr);
 	DrawLine(GetScreenWidth()/2, 0, GetScreenWidth()/2, GetScreenHeight(), RED);
+	DrawText(TextFormat("Plr1: %d\nPlr2: %d", p1s, p2s), 10, GetScreenHeight()-30, text_color);
 	
 	if(b.y <= 0 || b.y >= GetScreenHeight()-b.radius) b.speedy *= -1;
-	if(b.x <= 10 + paddle_width/2 || b.x >= GetScreenWidth()-10-paddle_width) { b.speedx *= -1;
-		b.x = GetScreenWidth()/2-b.radius; b.y = GetScreenHeight()/2-b.radius; }
+	
+	if(b.x <= 10 + paddle_width/2) { b.speedx *= -1;
+		b.x = GetScreenWidth()/2-b.radius; b.y = GetScreenHeight()/2-b.radius;
+		p2s++; }
+	
+	if(b.x >= GetScreenWidth()-10-paddle_width)  { b.speedx *= -1;
+		b.x = GetScreenWidth()/2-b.radius; b.y = GetScreenHeight()/2-b.radius;
+		p1s++; }
 	
 	EndDrawing();	
 	}
