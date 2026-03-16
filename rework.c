@@ -5,6 +5,18 @@
         Unstable, untested, likely doesn't work. I will have to rewrite make file,
         fuck this shit.
 		FUCK RUST I REWRITE MY CODE IN FUCKIDY C LIKE A REAL PROGRAMMER.
+		Do I want to include time header? I dunno, maybe. I don't know if I really
+		care about random ball movements? I feel like it's only unnecesary extra
+		math for like nothing. I want to make this as compatible as RayLib is so
+		giving extra math to process for a shitty commodore processor is a bad idea.
+		Or I am just lazy, both are good. For refference to new kidz:
+		Commodore is a old ass computer. I don't even know if raylib supports this but
+		anything supporting OpenGL should work so 90s stuff like i486 intel should
+		be compatible too. In theory. I mean not many distros even support this architecture
+		so I dunno what kind of system you would even use on it... NetBSD maybe? PLD (Polish
+		Linux Distribution)? MAYBE some Mandrake? I dunno, I don't judge. Or I am just thinking
+		outside of the box now and you can just use something like Windows 98... both is
+		good. End of rant.
 </rant>
 */
 
