@@ -91,7 +91,7 @@ int main(void) {
 	DrawRectangle(pa.x,pa.y,pa.width,pa.height,pa.clr);
 	DrawCircle(b.x, b.y, b.radius, b.clr);
 	DrawLine(GetScreenWidth()/2, 0, GetScreenWidth()/2, GetScreenHeight(), RED);
-	DrawText(TextFormat("Plr1: %d\nPlr2: %d", p1s, p2s), 10, GetScreenHeight()-30, text_color);
+	DrawText(TextFormat("Plr1: %d\nPlr2: %d", p1s, p2s), 10, GetScreenHeight()-30, GetScreenHeight()/10, text_color); // txt font is 1/10th of screen's height.
 	
 	if(b.y <= 0 || b.y >= GetScreenHeight()-b.radius) b.speedy *= -1;
 	
