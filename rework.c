@@ -36,17 +36,19 @@
 */
 // ---------------------------------[ Window cnf. ]---------------------------------
 
-        int window_width = 0;
-        int window_height = 0;
+        int window_width = 500;
+        int window_height = 500;
         int window_max_fps = 30;
-		Color text_color = WHITE; 
+	Color text_color = WHITE; 
 
 // ---------------------------------[ Paddles cnf ]---------------------------------
 
         float paddle_width = 25;
         float paddle_height = 80;
         Color paddle_color = RED;
-		int paddles_speed = 200;
+	int paddles_speed = 200;
+	int p1s = 0;
+	int p2s = 0;
 
 // ---------------------------------[ Ball conf. ]---------------------------------
 
@@ -71,7 +73,7 @@ int main(void) {
 
 	struct Ball b={ 400,250,200,-200,ball_radius,ball_color };
 	struct Paddle p1={ 10,170,paddle_width,paddle_height,paddle_color };
-	struct Paddle pa={ 765,170,paddle_width,paddle_height,color };
+	struct Paddle pa={ GetScreenWidth()-10-paddle_width,170,paddle_width,paddle_height,paddle_color };
 	p1s = 0;
 	p2s = 0;
 
@@ -87,15 +89,18 @@ int main(void) {
 
 	if(p1.y >= GetScreenHeight()-p1.height) p1.y = GetScreenHeight()-p1.height;
 	if(pa.y >= GetScreenHeight()-pa.height) pa.y = GetScreenHeight()-pa.height;
-	if(p1.y <= 0) p1.y = 0;
-	if(pa.y <= 0) pa.y = 0;
+	if(p1.y <= 1) p1.y = 1;
+	if(pa.y <= 1) pa.y = 1;
 
 	
 	if(IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S)) p1.y += paddles_speed * delta;
 	if(IsKeyDown(KEY_UP) || IsKeyDown(KEY_W)) p1.y -= paddles_speed * delta;
-	
-	if(b.y > pa.y) { pa.y += paddles_speed-60 * delta;
-	} else { pa.y -= paddles_speed-60 * delta; }
+
+	if(b.y > pa.y) pa.y += ((paddles_speed - 30) * delta);
+	if(b.y < pa.y) pa.y -= ((paddles_speed - 30) * delta);
+	// Borked. DO NOT make this mistake smh.
+	//if(b.y > pa.y) pa.y += paddles_speed;
+	//else { pa.y -= paddles_speed-60 * delta; }
 	
 	ClearBackground(BLACK);
 
@@ -103,9 +108,10 @@ int main(void) {
 	DrawRectangle(pa.x,pa.y,pa.width,pa.height,pa.clr);
 	DrawCircle(b.x, b.y, b.radius, b.clr);
 	DrawLine(GetScreenWidth()/2, 0, GetScreenWidth()/2, GetScreenHeight(), RED);
-	DrawText(TextFormat("Plr1: %d\nPlr2: %d", p1s, p2s), 10, GetScreenHeight()-30, GetScreenHeight()/10, text_color); // txt font is 1/10th of screen's height.
+	DrawText(TextFormat("Plr1: %d\nPlr2: %d", p1s, p2s), 10, GetScreenHeight()-30, GetScreenHeight()/50, text_color); // txt font is 1/10th of screen's height.
 	
-	if(b.y <= 0 || b.y >= GetScreenHeight()-b.radius) b.speedy *= -1;
+	if(b.y - b.radius <= 1 || b.y >= GetScreenHeight()-b.radius) b.speedy *= -1;
+	printf("%f\n", b.y);
 	
 	if(b.x <= 10 + paddle_width/2) { b.speedx *= -1;
 		b.x = GetScreenWidth()/2-b.radius; b.y = GetScreenHeight()/2-b.radius;
