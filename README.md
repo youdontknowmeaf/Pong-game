@@ -4,7 +4,7 @@
 2. ``cd Pong-game-CPP/Pong``
 3. ``python3 setup.py``
 4. To launch the game you write ``./out`` and to recompile it you can:
-- ``make`` or ``g++ main.cpp -o Pong -lraylib`` or ./build.sh (for main version)
+- ``make`` or ``gcc main.c -o out -lraylib -lm`` (for main version)
 - ``gcc lightweigh-pong.c -o Lightweigh-Pong -lraylib -lm`` (for lightweigh version)
 
 # GOALS
@@ -36,3 +36,6 @@
 - Created a Makefile build system for convinience
 - Implemented Zen mode
 - Implemented Random Ball Speed when it hits something
+- **v2.0**:
+- This is a major release as it includes the almost complete rework of the game in C language. (Moving from C++)
+- Note: Fuck Rust, Rust devs selfish fucks.
