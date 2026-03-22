@@ -1,0 +1,2 @@
+/home/fuckingfuck81/Pong/Pong-game-CPP/Spins/CSharp/bin/Release/net8.0/win-arm64/publish/PongGame.pdb
+/home/fuckingfuck81/Pong/Pong-game-CPP/Spins/CSharp/bin/Release/net8.0/win-arm64/publish/PongGame.exe

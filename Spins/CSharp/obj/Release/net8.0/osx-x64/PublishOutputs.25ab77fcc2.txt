@@ -1,0 +1,3 @@
+/home/fuckingfuck81/Pong/Pong-game-CPP/Spins/CSharp/bin/Release/net8.0/osx-x64/publish/PongGame.pdb
+/home/fuckingfuck81/Pong/Pong-game-CPP/Spins/CSharp/bin/Release/net8.0/osx-x64/publish/libraylib.dylib
+/home/fuckingfuck81/Pong/Pong-game-CPP/Spins/CSharp/bin/Release/net8.0/osx-x64/publish/PongGame

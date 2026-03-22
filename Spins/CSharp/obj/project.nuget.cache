@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "1su2SO3oMRMiLFu4ZeNi2/xsm2mH2Q/dkxvm73ldsOhl5/xVf52/e25I97Pk2aUWMOZxbCBAHof4suPb1EY0bg==",
+  "success": true,
+  "projectFilePath": "/home/fuckingfuck81/Pong/Pong-game-CPP/Spins/CSharp/PongGame.csproj",
+  "expectedPackageFiles": [
+    "/home/fuckingfuck81/.nuget/packages/microsoft.net.illink.tasks/8.0.25/microsoft.net.illink.tasks.8.0.25.nupkg.sha512",
+    "/home/fuckingfuck81/.nuget/packages/raylib-cs/7.0.2/raylib-cs.7.0.2.nupkg.sha512",
+    "/home/fuckingfuck81/.nuget/packages/microsoft.netcore.app.runtime.linux-arm64/8.0.25/microsoft.netcore.app.runtime.linux-arm64.8.0.25.nupkg.sha512",
+    "/home/fuckingfuck81/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-arm64/8.0.25/microsoft.aspnetcore.app.runtime.linux-arm64.8.0.25.nupkg.sha512",
+    "/home/fuckingfuck81/.nuget/packages/microsoft.netcore.app.host.linux-arm64/8.0.25/microsoft.netcore.app.host.linux-arm64.8.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}
