@@ -3,7 +3,9 @@
 Install the dependencies. Which is just RayLib. You should install the raylib-devel.
 https://www.raylib.com/ for help.
 
-Note: if you are a windows user then you are on your own, I can't be bothered less to make a build for such bad system.
+Note if you are a windows user:
+Instead of that you can use the C# build which is direct copy. Download the source code, enter this path ``Pong\Spins\Csharp\Bin\Release\net8.0``, from here you can pick the architecture of your system. Win-* (64 is x86_64, x86 is 32 bit, ARM64 is... ARM64). After opening the folder with your desired architecture you want to enter ``publish`` which will contain the .exe and the DLL.
+To mac users: I am afraid you are on your own. As much as I want to help y'all I don't know how to make .dmg apps.
 
 1. ``git clone https://github.com/youdontknowmeaf/Pong-game.git``
 2. ``cd Pong-game/Pong/YourDesiredVersionHere``
@@ -46,3 +48,12 @@ Note: if you are a windows user then you are on your own, I can't be bothered le
 - Note: Fuck Rust, Rust devs selfish fucks.
 - **v2.1 - Stable**
 - This release aims to make the code base more readable by splitting everything into a seprate directory and rewriting/deleting some things like setup.py, which are useless. 
+- **v3.0 HUGE UPDATE**
+- This update features many cool things...!
+- I have rewritten the whole game in C# and made executables for MacOS (intel and silicon), Linux (64 and ARM64, Windows (x86, 64 and ARM64)
+- Added support for 32 bit Linux for the main version.
+- Reimagined the way I will further dev the game, I will now focus on rewritting the game in various languages.
+- **v3.5 - Java**
+- This update brings us a release made in Java!
+- I rewrote the game in Java and added build instructions for Spins.
+- Planning Android supprot maybe...?
