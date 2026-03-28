@@ -1,2 +1,0 @@
-/home/fuckingfuck81/Pong/Pong-game-CPP/Spins/CSharp/bin/Release/net8.0/linux-x64/publish/CSharp.pdb
-/home/fuckingfuck81/Pong/Pong-game-CPP/Spins/CSharp/bin/Release/net8.0/linux-x64/publish/CSharp

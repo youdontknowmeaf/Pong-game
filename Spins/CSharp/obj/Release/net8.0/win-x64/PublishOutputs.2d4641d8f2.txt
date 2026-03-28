@@ -1,3 +1,0 @@
-/home/fuckingfuck81/Pong/Pong-game-CPP/Spins/CSharp/bin/Release/net8.0/win-x64/publish/CSharp.pdb
-/home/fuckingfuck81/Pong/Pong-game-CPP/Spins/CSharp/bin/Release/net8.0/win-x64/publish/raylib.dll
-/home/fuckingfuck81/Pong/Pong-game-CPP/Spins/CSharp/bin/Release/net8.0/win-x64/publish/CSharp.exe
