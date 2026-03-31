@@ -57,3 +57,6 @@ To mac users: I am afraid you are on your own. As much as I want to help y'all I
 - This update brings us a release made in Java!
 - I rewrote the game in Java and added build instructions for Spins.
 - Planning Android supprot maybe...?
+- **v3.6 - Python**
+- This is a minor release, Python sucks but it's popular so I wanted to make a yet another learning resource.
+- Rewrote the game in Python, (See: /Spins/Python/how_to_run.txt)
