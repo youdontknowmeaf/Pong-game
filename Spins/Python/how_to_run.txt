@@ -1,0 +1,13 @@
+How to run?
+
+1. Make sure python3 is installed
+2. If you are on linux/BSD you can run run_me.sh (Might also work for Macs tho I am not 100% sure how they work)
+
+Additional note:
+If somehow the script doesn't work or isn't provided for whatever reason you have to use python3 of venv manually like so:
+
+UNIX:
+./.venv/bin/python3 main.py
+
+Shitdows:
+I dunno, you are on your own lol
