@@ -57,3 +57,7 @@ To mac users: I am afraid you are on your own. As much as I want to help y'all I
 - This update brings us a release made in Java!
 - I rewrote the game in Java and added build instructions for Spins.
 - Planning Android supprot maybe...?
+- **3.6 - Python release**
+- Rewrote the game in shitty but popular Python language. (see Spins/Python/how_to_run.txt)
+- **3.7 - Zig release**
+- Rewrote the game in Zig which led me to Brain Damage. (see Spins/Zig/How2Run.txt)
