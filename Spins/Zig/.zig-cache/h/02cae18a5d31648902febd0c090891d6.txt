@@ -1,0 +1,2 @@
+0
+4636 19292636 1775041510449337521 e92ce077d2ecf27198ce8669ae7fb5de 3 p/raylib-5.5.0-whq8uExcNgQBBys4-PIIEqPuWO-MpfOJkwiM4Q1nLXVN/src/external/glfw/deps/wayland/fractional-scale-v1.xml

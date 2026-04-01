@@ -1,0 +1,9 @@
+----------[ How to run ]----------------
+1. Install Zig with your package manager
+2. Run:
+	zig build
+3. Enter zig-out/bin
+4. Run:
+	./pong
+
+If you are a Zig programmer and you want to clean the code up then I would be thankful :-)
