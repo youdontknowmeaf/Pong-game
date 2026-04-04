@@ -1,0 +1,6 @@
+To run:
+1. Install FreeBasic Compiler (FBC). (See: https://freebasic.net/)
+2. Setup raylib for C language. (See: https://raylib.com)
+3. Run:
+	fbc main.bas -l raylib
+

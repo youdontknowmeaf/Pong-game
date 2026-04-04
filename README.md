@@ -61,3 +61,5 @@ To mac users: I am afraid you are on your own. As much as I want to help y'all I
 - Rewrote the game in shitty but popular Python language. (see Spins/Python/how_to_run.txt)
 - **3.7 - Zig release**
 - Rewrote the game in Zig which led me to Brain Damage. (see Spins/Zig/How2Run.txt)
+- **3.8 - Pretty Basic**
+- Rewrote the game in FreeBASIC which took a reasonable ammount of time! (see Spins/Zig/HOWTORUN.txt)
