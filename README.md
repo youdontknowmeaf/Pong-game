@@ -63,3 +63,5 @@ To mac users: I am afraid you are on your own. As much as I want to help y'all I
 - Rewrote the game in Zig which led me to Brain Damage. (see Spins/Zig/How2Run.txt)
 - **3.8 - Pretty Basic**
 - Rewrote the game in FreeBASIC which took a reasonable ammount of time! (see Spins/Zig/HOWTORUN.txt)
+- *pre-4.0*
+- Started rewriting the game using SDL1.2 and rearranged the folders structure for future updates.
