@@ -1,3 +1,0 @@
-last tested: 22 March, 2026 - Works on x86_64 Ubuntu
-last tested: 22 March, 2026 - Doesn't work on i386 Debian 12. GLIBC23 issue, I suspect that if you try compiling RayLib yourself it should work but I couldn't get it to work.
-For convinience X11 and RayLib are staticly linked to the executable. It should work OOTB... Until it doesnt... --------^^^---------

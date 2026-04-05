@@ -17,6 +17,7 @@
 		Linux Distribution)? MAYBE some Mandrake? I dunno, I don't judge. Or I am just thinking
 		outside of the box now and you can just use something like Windows 98... both is
 		good. End of rant.
+	Eh, I sometimes write random shit here when I am bored. Lol
 </rant>
 */
 
@@ -26,13 +27,13 @@
 
 // ---------------------------------[ ~ CONFIG ~ ]---------------------------------
 /*
-                Colors table | Tabela kolorów: | [place for other languages]
-                RED          | Czerwony        |
-                BLACK        | Czarny          |
-                WHITE        | Biały           |
-                RAYWHITE     | Ciemny biały    |
-                BLUE         | Niebieski       |
-                GREEN        | Zielony         |
+                Colors table: | Tabela kolorów: | [place for other languages]
+                RED           | Czerwony        |
+                BLACK         | Czarny          |
+                WHITE         | Biały           |
+                RAYWHITE      | Ciemny biały    |
+                BLUE          | Niebieski       |
+                GREEN         | Zielony         |
 */
 // ---------------------------------[ Window cnf. ]---------------------------------
 
@@ -68,7 +69,7 @@ struct Paddle {
 
 int main(void) {
 	
-	InitWindow(window_width, window_height, "Pong - v2.1 - Linux");
+	InitWindow(window_width, window_height, "Pong - C (RayLib)");
 	SetTargetFPS(window_max_fps);
 
 	struct Ball b={ 400,250,200,-200,ball_radius,ball_color };

@@ -23,8 +23,8 @@ int main(void) {
 	if(pa.y >= GetScreenHeight()-pa.height) pa.y = GetScreenHeight()-pa.height;
 	if(p1.y <= 0) p1.y = 0;
 	if(pa.y <= 0) pa.y = 0;
-	if(IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S)) p1.y += 200 * delta;
-	if(IsKeyDown(KEY_UP) || IsKeyDown(KEY_W)) p1.y -= 200 * delta;
+	if(IsKeyDown(KEY_DOWN) != 0 || IsKeyDown(KEY_S) != 0) p1.y += 200 * delta;
+	if(IsKeyDown(KEY_UP) != 0 || IsKeyDown(KEY_W) != 0) p1.y -= 200 * delta;
 	if(b.y > pa.y) { pa.y += 140 * delta;
 	} else { pa.y -= 140 * delta; }
 	ClearBackground(BLACK);

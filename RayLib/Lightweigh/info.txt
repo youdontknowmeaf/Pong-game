@@ -1,0 +1,16 @@
+last tested: 22 March, 2026 - Works on x86_64 Ubuntu
+last tested: 22 March, 2026 - Doesn't work on i386 Debian 12. GLIBC23 issue, I suspect that if you try compiling RayLib yourself it should work but I couldn't get it to work.
+For convinience X11 and RayLib are staticly linked to the executable. It should work OOTB... Until it doesnt... --------^^^---------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Not a thing anymore.
+
+UPDATE:
+This is no longer a 32 bit release.
+It is dedicated folder for lightweigh pong.
+Stats:
+
+Lowest playable framerate (No game-breaking bugs): 5 FPS
+Lowest recommended framerate (Everything works): 10 FPS
+Recommended framerate: 30 FPS
+Highest tested framerate: 999999999 FPS (In theory you can put anything here because of DeltaTime movement)
+
+last tested: 5 April 2026 - Works on x86_64 Debian 13 (Thinkpad x230)
