@@ -65,3 +65,5 @@ To mac users: I am afraid you are on your own. As much as I want to help y'all I
 - Rewrote the game in FreeBASIC which took a reasonable ammount of time! (see Spins/FreeBasic/HOWTORUN.txt)
 - *pre-4.0*
 - Started rewriting the game using SDL1.2 and rearranged the folders structure for future updates.
+- *pre-4.0v2*
+- Rewrote the initial minimal game in SDL1.2 and wrote proper Makefile for it.
