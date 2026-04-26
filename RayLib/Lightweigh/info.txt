@@ -14,3 +14,10 @@ Recommended framerate: 30 FPS
 Highest tested framerate: 999999999 FPS (In theory you can put anything here because of DeltaTime movement)
 
 last tested: 5 April 2026 - Works on x86_64 Debian 13 (Thinkpad x230)
+
+UPDATE:
+Added sounds (Terminal bell) which don't require anything.
+It's a terminal bell so if it doesn't find it it will just do nothing.
+Now uses software rendering so GPU is not required.
+
+last tested: 26 April 2026 - Works on x86_64 Ubuntu 25.10 (PC)

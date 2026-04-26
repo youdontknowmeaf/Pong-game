@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <raylib.h>
+#include "raylib.h"
 struct Ball {
 	float x, y, speedx, speedy, radius;
 	Color clr; };
@@ -15,8 +15,8 @@ int main(void) {
 	while(!WindowShouldClose()) {
 	BeginDrawing();
 	float delta = GetFrameTime();
-	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){p1.x,p1.y,p1.width,p1.height})) b.speedx *= -1;
-	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){pa.x,pa.y,pa.width,pa.height})) b.speedx *= -1;
+	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){p1.x,p1.y,p1.width,p1.height})) { b.speedx *= -1; printf("\a"); fflush(stdout); }
+	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){pa.x,pa.y,pa.width,pa.height})) { b.speedx *= -1; printf("\a"); fflush(stdout); }
 	b.x += b.speedx * delta;
 	b.y += b.speedy * delta;
 	if(p1.y >= GetScreenHeight()-p1.height) p1.y = GetScreenHeight()-p1.height;
