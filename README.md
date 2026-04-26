@@ -18,7 +18,7 @@ Right click on your desktop > new > shortcut > C:\Path\To\The\Fucking\Pong.exe >
 3. Compile the game with ``make`` or doing it manually.
 4. To launch the game you write ``./Pong`` and to recompile it you can:
 - ``make`` or ``gcc main.c -o out -lraylib -lm`` (for main version)
-- ``gcc lightweigh-pong.c -o Lightweigh-Pong -lraylib -lm`` (for lightweigh version)
+- ``make`` or ``gcc lightweigh-pong.c -o Lightweigh-Pong -lraylib -lm`` (for lightweigh version)
 
 If you are a Mac user, I am currently testing Makefiles for MacOS. (Comming soon)
 
