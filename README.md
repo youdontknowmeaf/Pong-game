@@ -67,3 +67,7 @@ To mac users: I am afraid you are on your own. As much as I want to help y'all I
 - Started rewriting the game using SDL1.2 and rearranged the folders structure for future updates.
 - *pre-4.0v2*
 - Rewrote the initial minimal game in SDL1.2 and wrote proper Makefile for it.
+- **4.0 - Feather**
+- After checking the previous mini releases, they all work.
+- __Implemented RayLib 6.0 software rendering to Lightweigh release__
+- SDL release is not yet fully complete but it's working and is playable.
