@@ -1,18 +1,26 @@
 # INSTALLATION
-
 Install the dependencies. Which is just RayLib. You should install the raylib-devel.
 https://www.raylib.com/ for help.
 
-Note if you are a windows user:
-Instead of that you can use the C# build which is direct copy. Download the source code, enter this path ``Pong\Spins\Csharp\Bin\Release\net8.0``, from here you can pick the architecture of your system. Win-* (64 is x86_64, x86 is 32 bit, ARM64 is... ARM64). After opening the folder with your desired architecture you want to enter ``publish`` which will contain the .exe and the DLL.
-To mac users: I am afraid you are on your own. As much as I want to help y'all I don't know how to make .dmg apps.
+# SHITDOWS INSTALL
+ Note if you are a windows user:
+~~Instead of that you can use the C# build which is direct copy. Download the source code, enter this path ``Pong\Spins\Csharp\Bin\Release\net8.0``, from here you can pick the architecture of your system. Win-* (64 is x86_64, x86 is 32 bit, ARM64 is... ARM64). After opening the folder with your desired architecture you want to enter ``publish`` which will contain the .exe and the DLL.
+To mac users: I am afraid you are on your own. As much as I want to help y'all I don't know how to make .dmg apps.~~
+Install dotnet, open powershell in the C# directory and run this:
+``dotnet publish -r win-x64 -c Release --self-contained``
+It will make a x86_64 release for your shitdows system in Bin\Release\net8.0\win-x64\publish\ and there will be .dll and .exe
+You can then make a shortcut to it on your homescreen.
+Right click on your desktop > new > shortcut > C:\Path\To\The\Fucking\Pong.exe > next and you can give it some kewl icon and name. Then you are done. (All that shit is avoidable with simple ``make`` on linux btw) 
 
+# NORMAL SYSTEMS INSTALL
 1. ``git clone https://github.com/youdontknowmeaf/Pong-game.git``
 2. ``cd Pong-game/Pong/YourDesiredVersionHere``
 3. Compile the game with ``make`` or doing it manually.
 4. To launch the game you write ``./Pong`` and to recompile it you can:
 - ``make`` or ``gcc main.c -o out -lraylib -lm`` (for main version)
 - ``gcc lightweigh-pong.c -o Lightweigh-Pong -lraylib -lm`` (for lightweigh version)
+
+If you are a Mac user, I am currently testing Makefiles for MacOS. (Comming soon)
 
 # GOALS
 - Recreating 1972 pong with QOL features
