@@ -7,3 +7,10 @@
 	./pong
 
 If you are a Zig programmer and you want to clean the code up then I would be thankful :-)
+
+---------[ Read me ]--------------------
+I will not be maintaining this release, I just can't use Zig.
+I have made the base but I just don't like using Zig.
+I hope you guys understand!
+(I'll accept 99.9% of merge requests tho)
+---------[ EOF ]-----------------------
