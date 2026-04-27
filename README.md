@@ -79,3 +79,6 @@ If you are a Mac user, I am currently testing Makefiles for MacOS. (Comming soon
 - After checking the previous mini releases, they all work.
 - __Implemented RayLib 6.0 software rendering to Lightweigh release__
 - SDL release is not yet fully complete but it's working and is playable.
+- **4.1**
+- Added sounds to the Main release and Lightweigh release
+- Extended python's Spin functionality with config
