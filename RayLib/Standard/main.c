@@ -60,12 +60,16 @@
 		bool sounds = 1;
 // ---------------------------------[ END CONFIG ]---------------------------------
 
-if(sounds == 1){
-char sound[5] = "\a";
-} else { printf("No sounds enabled.\n");
-char sound[1] = ""; }
+char *sound = "";
 
-void PlaySound() {
+void PlaySoundBell() {
+	if(sounds){
+        	sound = "\a";
+	} else { 
+		printf("No sounds enabled.\n");
+        	sound = "";
+	}
+
 	printf("%s", sound);
 	fflush(stdout);
 }
@@ -94,8 +98,8 @@ int main(void) {
 	BeginDrawing();
 	float delta = GetFrameTime();	
 
-	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){p1.x,p1.y,p1.width,p1.height})){ b.speedx *= -1; PlaySound(); }
-	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){pa.x,pa.y,pa.width,pa.height})){ b.speedx *= -1; PlaySound(); }
+	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){p1.x,p1.y,p1.width,p1.height})){ b.speedx *= -1; PlaySoundBell(); }
+	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){pa.x,pa.y,pa.width,pa.height})){ b.speedx *= -1; PlaySoundBell(); }
 	
 	b.x += b.speedx * delta;
 	b.y += b.speedy * delta;
