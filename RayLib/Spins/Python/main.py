@@ -1,19 +1,29 @@
 from pyray import *
 from random import randint
 
-# Configs
+# Configs - Window
 window_width = 800
 window_height = 600
 max_fps = 30
+text = True # "Python sucks" text
+# Configs - Paddles
+paddle_width = 10
+paddle_height = 50
+paddle_speed = 10
+paddle_color = RED
+# Configs - Ball
+ball_speed = 10
+ball_color = RED
+ball_radius = 10
 
 class Paddle:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.width = 10
-        self.height = 50
-        self.color = RED
-        self.speed = 10
+        self.width = paddle_width
+        self.height = paddle_height
+        self.color = paddle_color
+        self.speed = paddle_speed
     def draw(self):
         draw_rectangle(self.x, self.y, self.width, self.height, self.color)
     def move_plr(self):
@@ -36,10 +46,10 @@ class Ball:
     def __init__(self):
         self.x = window_height//2
         self.y = window_width//2
-        self.color = RED
-        self.speedx = 10
-        self.speedy = 10
-        self.radius = 10
+        self.color = ball_color
+        self.speedx = ball_speed
+        self.speedy = ball_speed
+        self.radius = ball_radius
     def draw(self):
         draw_circle(self.x, self.y, self.radius, self.color)
     def move(self):
@@ -74,7 +84,8 @@ while not window_should_close():
     begin_drawing()
     clear_background(BLACK)
     #--------------------------------------------------------------------
-    draw_text('Python sucks', 50, 50, 20, RED)
+    if text == True:
+        draw_text('Python sucks', 50, 50, 20, RED)
 
     ball.draw()
     player.draw()
