@@ -27,36 +27,48 @@
 
 // ---------------------------------[ ~ CONFIG ~ ]---------------------------------
 /*
-                Colors table: | Tabela kolorów: | [place for other languages]
-                RED           | Czerwony        |
-                BLACK         | Czarny          |
-                WHITE         | Biały           |
-                RAYWHITE      | Ciemny biały    |
-                BLUE          | Niebieski       |
-                GREEN         | Zielony         |
+                Colors table: | Tabela kolorów: | Farbtabelle: | [place for other languages]
+                RED           | Czerwony        | Rot		   |
+                BLACK         | Czarny          | Schwarz      |
+                WHITE         | Biały           | Weiß         |
+                RAYWHITE      | Ciemny biały    | Dunkelweiß   |
+                BLUE          | Niebieski       | Blau         |
+                GREEN         | Zielony         | Grün         |
 */
 // ---------------------------------[ Window cnf. ]---------------------------------
 
         int window_width = 500;
         int window_height = 500;
         int window_max_fps = 30;
-	Color text_color = WHITE; 
+		Color text_color = WHITE;
 
 // ---------------------------------[ Paddles cnf ]---------------------------------
 
         float paddle_width = 25;
         float paddle_height = 80;
         Color paddle_color = RED;
-	int paddles_speed = 200;
-	int p1s = 0;
-	int p2s = 0;
+		int paddles_speed = 200;
+		int p1s = 0;
+		int p2s = 0;
 
 // ---------------------------------[ Ball conf. ]---------------------------------
 
         float ball_radius = 20;
         Color ball_color = RED;
-
+// ---------------------------------[ Game conf. ]---------------------------------
+		int scr = 1; /* Score that gets added when you score */
+		bool sounds = 1;
 // ---------------------------------[ END CONFIG ]---------------------------------
+
+if(sounds == 1){
+char sound[5] = "\a";
+} else { printf("No sounds enabled.\n");
+char sound[1] = ""; }
+
+void PlaySound() {
+	printf("%s", sound);
+	fflush(stdout);
+}
 
 struct Ball {
 	float x, y, speedx, speedy, radius;
@@ -82,8 +94,8 @@ int main(void) {
 	BeginDrawing();
 	float delta = GetFrameTime();	
 
-	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){p1.x,p1.y,p1.width,p1.height})) b.speedx *= -1;
-	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){pa.x,pa.y,pa.width,pa.height})) b.speedx *= -1;
+	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){p1.x,p1.y,p1.width,p1.height})){ b.speedx *= -1; PlaySound(); }
+	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){pa.x,pa.y,pa.width,pa.height})){ b.speedx *= -1; PlaySound(); }
 	
 	b.x += b.speedx * delta;
 	b.y += b.speedy * delta;
@@ -116,11 +128,11 @@ int main(void) {
 	
 	if(b.x <= 10 + paddle_width/2) { b.speedx *= -1;
 		b.x = GetScreenWidth()/2-b.radius; b.y = GetScreenHeight()/2-b.radius;
-		p2s++; }
+		p2s += scr; }
 	
 	if(b.x >= GetScreenWidth()-10-paddle_width)  { b.speedx *= -1;
 		b.x = GetScreenWidth()/2-b.radius; b.y = GetScreenHeight()/2-b.radius;
-		p1s++; }
+		p1s += scr; }
 	
 	EndDrawing();	
 	}
