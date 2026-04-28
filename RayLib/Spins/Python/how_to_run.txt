@@ -7,7 +7,14 @@ Additional note:
 If somehow the script doesn't work or isn't provided for whatever reason you have to use python3 of venv manually like so:
 
 UNIX:
+python3 -m venv .venv
+source ./.venv/bin/activate
+pip install raylib
+deactivate
 ./.venv/bin/python3 main.py
 
 Shitdows:
 I dunno, you are on your own lol
+Try this:
+pip install raylib
+python3 main.py
