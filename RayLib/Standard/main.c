@@ -44,7 +44,7 @@
 
 // ---------------------------------[ Paddles cnf ]---------------------------------
 
-        float paddle_width = 25;
+        float paddle_width = 20;
         float paddle_height = 80;
         Color paddle_color = RED;
 		int paddles_speed = 200;

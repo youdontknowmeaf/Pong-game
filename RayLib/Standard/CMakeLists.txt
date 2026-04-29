@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.20)
 add_executable(Pong)
 target_sources(Pong PRIVATE main.c)
 
-find_packages(raylib REQUIRED)
+find_package(raylib REQUIRED)
 target_link_libraries(Pong PRIVATE raylib)
 
 if(UNIX)
