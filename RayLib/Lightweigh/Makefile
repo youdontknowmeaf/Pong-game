@@ -4,9 +4,9 @@ CFLAGS = -Wall -O2 -std=c99
 SRC = lightweigh-pong.c
 TARGET = Pong
 ifeq ($(shell uname), Darwin)
-    LIBS = -L./libraylib/raylib -lraylib -framework CoreVideo -framework IOKit -framework Cocoa -framework OpenGL
+    LIBS = -L./libraylib -lraylib -framework CoreVideo -framework IOKit -framework Cocoa -framework OpenGL
 else
-    LIBS = -L./libraylib/raylib -lraylib -lm -ldl -lpthread -lrt -lX11
+    LIBS = -L./libraylib -lraylib -lm -ldl -lpthread -lrt -lX11
 endif
 
 all:
