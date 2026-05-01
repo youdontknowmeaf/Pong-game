@@ -1,1 +1,13 @@
-If the CMake doesn't work for you, try the traditional handmade Makefile. Simply change Makefile.bak name to Makefile.
+    /~~~~~~~~~~~~~~~~~~~~\
+----[ Build instructions ]------------------------|
+						  |
+| cmake -S . -B build				  |
+						  |
+| cd build					  |
+						  |
+| make						  |
+						  |
+						  |
+						  |
+----[ The executable will be at ./build/Pong ]----|
+    \________________________________________/
