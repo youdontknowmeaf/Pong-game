@@ -7,12 +7,13 @@ TODO:
 - Check for collisions Ball-PaddleR. [x]
 - Check for collisions Ball-PaddleL. [x]
 - Add scoring when paddle collides with ball or when ball falls off the screen.
-- Make the ball reset position when it falls off the screen.
+- Make the ball reset position when it falls off the screen. [x]
 - Make these window properties changeable from config on the very top of the file:
 Window X, Window Y, Window's Background Colour, Window's Title.
 - Make the loop independent off FPS using Delta Time.
 - Make a proper Makefile. [x]
 - Make a port to MS-DOS.
+- Make the code compile with 1989 compiler [x]
 */
 #include <stdio.h>
 #include <SDL/SDL.h>
