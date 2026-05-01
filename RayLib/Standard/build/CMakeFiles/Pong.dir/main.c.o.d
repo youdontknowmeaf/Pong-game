@@ -16,4 +16,5 @@ CMakeFiles/Pong.dir/main.c.o: \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \
  /usr/include/bits/floatn-common.h /usr/include/raylib.h \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h
+ /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
+ /home/fuckingfuck81/Pong-game/RayLib/Standard/config.h

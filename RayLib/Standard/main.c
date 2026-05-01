@@ -23,42 +23,16 @@
 
 #include <stdio.h>
 #include <raylib.h>
-
+#include "config.h"
 
 // ---------------------------------[ ~ CONFIG ~ ]---------------------------------
 /*
-                Colors table: | Tabela kolorów: | Farbtabelle: | [place for other languages]
-                RED           | Czerwony        | Rot		   |
-                BLACK         | Czarny          | Schwarz      |
-                WHITE         | Biały           | Weiß         |
-                RAYWHITE      | Ciemny biały    | Dunkelweiß   |
-                BLUE          | Niebieski       | Blau         |
-                GREEN         | Zielony         | Grün         |
+	Config has moved to file: config.h
+
+	Refrain from using the Makefile made by me, use CMake instead
+
+	Hope y'all understand!
 */
-// ---------------------------------[ Window cnf. ]---------------------------------
-
-        int window_width = 500;
-        int window_height = 500;
-        int window_max_fps = 30;
-		Color text_color = WHITE;
-
-// ---------------------------------[ Paddles cnf ]---------------------------------
-
-        float paddle_width = 20;
-        float paddle_height = 80;
-        Color paddle_color = RED;
-		int paddles_speed = 200;
-		int p1s = 0;
-		int p2s = 0;
-
-// ---------------------------------[ Ball conf. ]---------------------------------
-
-        float ball_radius = 20;
-        Color ball_color = RED;
-// ---------------------------------[ Game conf. ]---------------------------------
-		int scr = 1; /* Score that gets added when you score */
-		bool sounds = 1;
-// ---------------------------------[ END CONFIG ]---------------------------------
 
 char *sound = "";
 
@@ -124,7 +98,7 @@ int main(void) {
 	DrawRectangle(p1.x,p1.y,p1.width,p1.height,p1.clr);
 	DrawRectangle(pa.x,pa.y,pa.width,pa.height,pa.clr);
 	DrawCircle(b.x, b.y, b.radius, b.clr);
-	DrawLine(GetScreenWidth()/2, 0, GetScreenWidth()/2, GetScreenHeight(), RED);
+	if(line_visible) DrawLine(GetScreenWidth()/2, 0, GetScreenWidth()/2, GetScreenHeight(), line_color);
 	DrawText(TextFormat("Plr1: %d\nPlr2: %d", p1s, p2s), 10, GetScreenHeight()-30, GetScreenHeight()/50, text_color); // txt font is 1/10th of screen's height.
 	
 	if(b.y - b.radius <= 1 || b.y >= GetScreenHeight()-b.radius) b.speedy *= -1;
