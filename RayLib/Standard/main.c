@@ -4,7 +4,7 @@
         This is part of the rework. I will reuse the code from lightweigh version.
         Unstable, untested, likely doesn't work. I will have to rewrite make file,
         fuck this shit.
-		FUCK RUST I REWRITE MY CODE IN FUCKIDY C LIKE A REAL PROGRAMMER.
+		FUCK RUST I REWRITE MY CODE IN FUCKING C LIKE A REAL PROGRAMMER.
 		Do I want to include time header? I dunno, maybe. I don't know if I really
 		care about random ball movements? I feel like it's only unnecesary extra
 		math for like nothing. I want to make this as compatible as RayLib is so
