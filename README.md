@@ -82,3 +82,9 @@ If you are a Mac user, I am currently testing Makefiles for MacOS. (Comming soon
 - **4.1**
 - Added sounds to the Main release and Lightweigh release
 - Extended python's Spin functionality with config
+- **5.0**
+- __Added web compilation for Lightweigh release__
+- Added 3-clause BSD license to the SDL version
+- Updated the SDL version
+- Changed README instructions for each system
+- Many more.
