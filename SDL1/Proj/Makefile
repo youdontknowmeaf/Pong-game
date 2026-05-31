@@ -1,5 +1,5 @@
 CXX = gcc
-CSTD = -std=c99 
+CSTD = -std=c89 
 CXXFLAGS = -Wall -O2
 CXXLIBS = `sdl-config --cflags --libs` 
 TARGET = Pong
