@@ -1,6 +1,8 @@
 # INSTALLATION
 Install the dependencies. Which is just RayLib. You should install the raylib-devel.
 https://www.raylib.com/ for help.
+(For SDL release you need SDL1.2)
+(https://www.libsdl.org/download-1.2.php)
 
 # SHITDOWS INSTALL
  Note if you are a windows user:
@@ -15,10 +17,8 @@ Right click on your desktop > new > shortcut > C:\Path\To\The\Fucking\Pong.exe >
 # NORMAL SYSTEMS INSTALL
 1. ``git clone https://github.com/youdontknowmeaf/Pong-game.git``
 2. ``cd Pong-game/Pong/YourDesiredVersionHere``
-3. Compile the game with ``make`` or doing it manually.
-4. To launch the game you write ``./Pong`` and to recompile it you can:
-- ``make`` or ``gcc main.c -o out -lraylib -lm`` (for main version)
-- ``make`` or ``gcc lightweigh-pong.c -o Lightweigh-Pong -lraylib -lm`` (for lightweigh version)
+3. Compile the game with the provided build system. (Make or CMake)
+4. To launch the game you write ``./Pong``.
 
 If you are a Mac user, I am currently testing Makefiles for MacOS. (Comming soon)
 
