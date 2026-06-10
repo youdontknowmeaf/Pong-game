@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sed -i '/^Exec=/d' Pong.desktop
+
 EXEPATH="$(pwd)/build/Pong"
 INSTALLPATH="$HOME/.local/share/applications"
 EXEC="Exec=$EXEPATH"

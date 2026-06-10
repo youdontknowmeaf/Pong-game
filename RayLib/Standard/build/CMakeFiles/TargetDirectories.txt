@@ -1,3 +1,0 @@
-/home/fuckingfuck81/Pong-game/RayLib/Standard/build/CMakeFiles/Pong.dir
-/home/fuckingfuck81/Pong-game/RayLib/Standard/build/CMakeFiles/edit_cache.dir
-/home/fuckingfuck81/Pong-game/RayLib/Standard/build/CMakeFiles/rebuild_cache.dir
