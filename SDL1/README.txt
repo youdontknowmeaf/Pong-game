@@ -9,6 +9,3 @@ This version is kind of stable and usable, I recommend it for piece-of-shit hard
 It's like raylib Lightweigh release but more compatible.
 
 You can use the Makefile to build it.
-
-Tested:
-Asus EEEPC x101ch - AntiX Linux i386 - Works correctly
