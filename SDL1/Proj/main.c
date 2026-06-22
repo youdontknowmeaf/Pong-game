@@ -63,12 +63,12 @@ Window X, Window Y, Window's Background Colour, Window's Title.
 */
 #include <stdio.h>
 #include <SDL/SDL.h>
-
-	int PaddleLX = 5; int PaddleLY = 300;
+	const int WinX = 500; const int WinY = 300;
+	int PaddleLX = 5; int PaddleLY = WinY/2;
         int PaddleLW = 10; int PaddleLH = 40;
-        int PaddleRX = 800-15; int PaddleRY = 300;
+        int PaddleRX = WinX-15; int PaddleRY = WinY/2;
         int PaddleRW = 10; int PaddleRH = 40;
-        int BallX = 400; int BallY = 300;
+        int BallX = WinX/2; int BallY = WinY/2;
         int BallW = 20; int BallH = 20; int BallXS = 7; int BallYS = 7;
         int Quit = 0;
         int Score = 0;
@@ -85,8 +85,8 @@ int CheckCollisionRect(int x1, int y1, int w1, int h1, int x2, int y2, int w2, i
 void UpdatePaddleL(SDL_Rect *PdlL) {
         PdlL->x = PaddleLX; PdlL->y = PaddleLY;
         PdlL->w = PaddleLW; PdlL->h = PaddleLH;
-                                if((int)PaddleLY > 600-PaddleLH) {
-                                        PaddleLY = 600-PaddleLH;
+                                if((int)PaddleLY > WinY-PaddleLH) {
+                                        PaddleLY = WinY-PaddleLH;
                                 } if((int)PaddleLY < 0) {
                                         PaddleLY = 0;
                                 }
@@ -95,8 +95,8 @@ void UpdatePaddleL(SDL_Rect *PdlL) {
 void UpdatePaddleR(SDL_Rect *PdlR) {
         PdlR->x = PaddleRX; PdlR->y = PaddleRY;
         PdlR->w = PaddleRW; PdlR->h = PaddleRH;
-                                if((int)PaddleRY > 600-PaddleRH) {
-                                        PaddleRY = 600-PaddleRH;
+                                if((int)PaddleRY > WinY-PaddleRH) {
+                                        PaddleRY = WinY-PaddleRH;
                                 } if((int)PaddleRY < 0) {
                                         PaddleRY = 0;
                                 }
@@ -106,7 +106,7 @@ void UpdateBall(SDL_Rect *Ball) {
             BallX += BallXS; BallY += BallYS;
             Ball->x = BallX; Ball->y = BallY;
             Ball->w = BallW; Ball->h = BallH;
-                if((int)BallY > 600-BallH) {
+                if((int)BallY > WinY-BallH) {
                     BallYS *= -1; } if((int)BallY < 0) {
                     BallYS *= -1; }
                 if(CheckCollisionRect(BallX, BallY, BallW, BallH, PaddleRX, PaddleRY, PaddleRW, PaddleRH) != 0) {
@@ -114,8 +114,8 @@ void UpdateBall(SDL_Rect *Ball) {
                 } if(CheckCollisionRect(BallX, BallY, BallW, BallH, PaddleLX, PaddleLY, PaddleLW, PaddleLH) != 0) {
                         BallXS *= -1; printf("\a"); fflush(stdout);
                 }
-                if(BallX <= 0) { BallX = 400; BallY = 300; Score--; }
-                if(BallX >= 800-BallW) { BallY= 300; BallX = 400; Score++; }
+                if(BallX <= 0) { BallX = WinX/2; BallY = WinY/2; Score--; }
+                if(BallX >= WinX-BallW) { BallY= WinY/2; BallX = WinX/2; Score++; }
            }
 
 void PaddleRAILogic(int yPos) {
@@ -129,7 +129,7 @@ void PaddleRAILogic(int yPos) {
 
 int main(int argc, char *argv[]) {
 
-	SDL_Surface* Screen = SDL_SetVideoMode(800, 600, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
+	SDL_Surface* Screen = SDL_SetVideoMode(WinX, WinY, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
 
 	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
 		printf("SDL Failed to initialize.\n");
