@@ -1,6 +1,6 @@
-CC = gcc
+CC = gcc -std=c99
 
-CFLAGS = -Wall -O2 -std=c99
+CFLAGS = -Wall -O2
 
 SRC = lightweigh-pong.c
 
@@ -21,6 +21,7 @@ web: LIBS = -I./libraylib/web -lraylib
 web: CFLAGS = -Wall -Os -std=c99 -DPLATFORM_WEB -s USE_GLFW=3 -s ASYNCIFY
 web: CC = emcc
 
+unix_static: LIBS = $(RLSRC) -I./libraylib/linux -Wl,-Bstatic -lraylib -Wl,-Bdynamic -lm -ldl -lpthread -lrt -lX11
 
 web:
 	@echo "Building $(SRC) for web..."
@@ -31,6 +32,11 @@ unix:
 	@echo "Building $(SRC)..."
 	$(CC) $(SRC) -o $(TARGET) $(LIBS) $(CFLAGS) 
 	@echo "Executable: $(TARGET)" 
+
+unix_static:
+	@echo "Building $(SRC)..."
+	$(CC) $(SRC) -o $(TARGET) $(LIBS) $(CFLAGS)
+	@echo "Executable: $(TARGET)"
 
 clean:
 	rm -f Pong.*

@@ -1,26 +1,3 @@
-/*
-<rant>
-        I want to fully rework the thing in C so it runs a little pittle better.
-        This is part of the rework. I will reuse the code from lightweigh version.
-        Unstable, untested, likely doesn't work. I will have to rewrite make file,
-        fuck this shit.
-		FUCK RUST I REWRITE MY CODE IN FUCKING C LIKE A REAL PROGRAMMER.
-		Do I want to include time header? I dunno, maybe. I don't know if I really
-		care about random ball movements? I feel like it's only unnecesary extra
-		math for like nothing. I want to make this as compatible as RayLib is so
-		giving extra math to process for a shitty commodore processor is a bad idea.
-		Or I am just lazy, both are good. For refference to new kidz:
-		Commodore is a old ass computer. I don't even know if raylib supports this but
-		anything supporting OpenGL should work so 90s stuff like i486 intel should
-		be compatible too. In theory. I mean not many distros even support this architecture
-		so I dunno what kind of system you would even use on it... NetBSD maybe? PLD (Polish
-		Linux Distribution)? MAYBE some Mandrake? I dunno, I don't judge. Or I am just thinking
-		outside of the box now and you can just use something like Windows 98... both is
-		good. End of rant.
-	Eh, I sometimes write random shit here when I am bored. Lol
-</rant>
-*/
-
 #include <stdio.h>
 #include <raylib.h>
 #include "config.h"
@@ -72,8 +49,8 @@ int main(void) {
 	BeginDrawing();
 	float delta = GetFrameTime();	
 
-	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){p1.x,p1.y,p1.width,p1.height})){ b.speedx *= -1; PlaySoundBell(); }
-	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){pa.x,pa.y,pa.width,pa.height})){ b.speedx *= -1; PlaySoundBell(); }
+	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){p1.x,p1.y,p1.width,p1.height})){ b.speedx *= -1; PlaySoundBell(); b.speedy += 0.1;}
+	if(CheckCollisionCircleRec((Vector2){b.x,b.y},b.radius,(Rectangle){pa.x,pa.y,pa.width,pa.height})){ b.speedx *= -1; PlaySoundBell(); b.speedx += 0.1; }
 	
 	b.x += b.speedx * delta;
 	b.y += b.speedy * delta;
@@ -106,15 +83,18 @@ int main(void) {
 	
 	if(b.x <= 10 + paddle_width/2) { b.speedx *= -1;
 		b.x = GetScreenWidth()/2-b.radius; b.y = GetScreenHeight()/2-b.radius;
-		p2s += scr; }
+		p2s += scr; 
+		b.speedx = 200; b.speedy = -200; }
 	
 	if(b.x >= GetScreenWidth()-10-paddle_width)  { b.speedx *= -1;
 		b.x = GetScreenWidth()/2-b.radius; b.y = GetScreenHeight()/2-b.radius;
-		p1s += scr; }
+		p1s += scr;
+		b.speedx = 200; b.speedy = -200; }
 	
 	EndDrawing();	
 	}
 
+PlaySoundBell();
 CloseWindow();
 return 0;
 }

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Pong
+Terminal=false
+Exec=/home/fuckingfuck81/Pong/Pong-game/RayLib/Standard/pkg/Pong

@@ -13,8 +13,8 @@
 */
 // ---------------------------------[ Window cnf. ]-----------------------
 
-        static const int window_width = 500;
-        static const int window_height = 500;
+        static const int window_width = 800;
+        static const int window_height = 600;
         static const int window_max_fps = 30;
 	static const Color text_color = WHITE;
 
