@@ -1,0 +1,12 @@
+MAKE OPTIONS\n
+\n
+None:\n
+	compiles a dynamic executable for Linux\n
+		(32 bit, 64 bit, ARM)\n
+\n
+win_9x_DOS:\n
+	compiles a static executable for Windows:\n
+			95, 98, 98 SE, Millenium Edition, NT 4.0 with Service Pack 3.0, 2000, XP, Vista, 7, 10, 11\n
+			64/32 bit, will not work on ARM and 16 bit systems.\n
+	Read the Makefile for instructions how to make a dynamic executable. (Comment out 1 line actually)\n
+	DOS refeers to the fact that Win 95/98 are just 32 bit DOS, it will not work on 16 bit DOS systems. (MSDOS 7.0 for 32 bit)\n

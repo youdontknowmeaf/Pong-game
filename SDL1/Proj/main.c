@@ -1,79 +1,6 @@
-/*
- Copyright 2026 SpookScoop93 (github.com/youdontknowmeaf)
-
-Redistribution and use in source and binary forms, with or without
-
-modification, are permitted provided that the following conditions are met:
-
-
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-
-2. Redistributions in binary form must reproduce the above copyright
-
-notice, this list of conditions and the following disclaimer in the
-
-documentation and/or other materials provided with the distribution.
-
-3. Neither the name of the copyright holder nor the names of its
-
-contributors may be used to endorse or promote products derived from
-
-this software without specific prior written permission.
-
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
-
-IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
-
-TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-
-PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-
-HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-
-SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-
-TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-
-LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-
-NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
-*/
-/*---------------------------------------------------------------------------------------------*/
-/*
-TODO:
-- Make the Left Paddle move. [x]
-- Make the Right Paddle and make it move. [x]
-- Make the ball and make it move. [x]
-- Make the ball bounce off the walls and attach it's Y to Right Paddle's update function. [x]
-- Check for collisions Ball-PaddleR. [x]
-- Check for collisions Ball-PaddleL. [x]
-- Add scoring when paddle collides with ball or when ball falls off the screen.
-- Make the ball reset position when it falls off the screen. [x]
-- Make these window properties changeable from config on the very top of the file:
-Window X, Window Y, Window's Background Colour, Window's Title.
-- Make the loop independent off FPS using Delta Time.
-- Make a proper Makefile. [x]
-- Make a port to MS-DOS.
-- Make the code compile with 1989 compiler [x]
-*/
 #include <stdio.h>
 #include <SDL/SDL.h>
-	const int WinX = 500; const int WinY = 300;
-	int PaddleLX = 5; int PaddleLY = WinY/2;
-        int PaddleLW = 10; int PaddleLH = 40;
-        int PaddleRX = WinX-15; int PaddleRY = WinY/2;
-        int PaddleRW = 10; int PaddleRH = 40;
-        int BallX = WinX/2; int BallY = WinY/2;
-        int BallW = 20; int BallH = 20; int BallXS = 7; int BallYS = 7;
-        int Quit = 0;
-        int Score = 0;
-        SDL_Rect PaddleL; SDL_Rect PaddleR; SDL_Rect Ball;
-	SDL_Event Event;
+#include "config.h"
 
 int CheckCollisionRect(int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2) {
 	if (x1 + w1 <= x2 || x1 >= x2 + w2 || y1 + h1 <= y2 || y1 >= y2 + h2) {
@@ -126,15 +53,15 @@ void PaddleRAILogic(int yPos) {
                         }
         }
 
-
 int main(int argc, char *argv[]) {
-
-	SDL_Surface* Screen = SDL_SetVideoMode(WinX, WinY, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
+	SDL_Surface *Screen = NULL;
 
 	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
 		printf("SDL Failed to initialize.\n");
 		return 1;
 	}
+	
+	Screen = SDL_SetVideoMode(WinX, WinY, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
 
 	if(!Screen) {
 		printf("Window could not be created. SDL_Error @ stage 2\n");
