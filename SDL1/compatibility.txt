@@ -1,5 +1,0 @@
-Tested systems:
-Arch	System			Additional info
-x86_64	Ubuntu Desktop 25.6	Nvidia Card
-i686	AntiX Linux		Asus EeePc x101ch
-ARM64	Debian 13 (RPIOS)	RaspberryPi 5

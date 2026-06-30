@@ -1,1 +1,0 @@
-/usr/bin/cc -Wl,--dependency-file=CMakeFiles/Pong.dir/link.d CMakeFiles/Pong.dir/main.c.o -o Pong  -lraylib -lm -lX11 -lGL -lpthread -ldl -lrt
